@@ -13,11 +13,11 @@ This repository contains all projects of the UC Sistemas Gráficos e Interfaces,
 
 ## Project 1 - This is Fine (Grade: 19.7/20)
 
-
+![Project 1](./Project%201/screenshots/project.png)
 
 ## Project 2 - Zelda Castle (Grade: __/20)
 
-
+![Project 2](./Project%202/images/mainExample.png)
 
 ## Project 3 -  TBD (Grade: __/20)
 

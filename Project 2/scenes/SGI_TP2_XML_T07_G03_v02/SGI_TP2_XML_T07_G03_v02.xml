@@ -1,0 +1,2312 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<yaf> 
+	
+    <globals background="0 0 0 1" ambient="0.4 0.4 0.4 1" /> 
+
+    <fog color="1.0 1.0 1.0 1.0" near="0.0" far="100.0" />
+
+    <cameras initial="Persp1" > 
+
+        <perspective id="Persp2" 
+            angle="60" 
+            near="1" 
+            far="200" 
+            location="-9 3 0" 
+            target="1 5.0 1" />
+
+        <perspective id="Persp1" 
+            angle="60" 
+            near="1" 
+            far="200" 
+            location="8.3 2.5 0" 
+            target="-1 5.0 -1" />
+
+        <orthogonal id="Ortho1" 
+            near="1" 
+            far="200" 
+            location="7.5 7 0" 
+            target="0.0 7.0 0.0" 
+            left="-15" 
+            right="15" 
+            bottom="-15" 
+            top="15" /> 
+
+        <orthogonal id="Ortho2" 
+            near="0.1" 
+            far="200" 
+            location="0 7 7.5" 
+            target="0.0 7.0 0.0" 
+            left="-15" 
+            right="15" 
+            bottom="-15" 
+            top="15" /> 
+    </cameras> 
+
+    <skybox size="100 100 100" 
+        center="0 0 0" 
+        emissive="1.0 1.0 1.0 1.0" 
+        intensity="1.0" 
+        up="scenes/SGI_TP2_XML_T07_G03_v02/skybox/top.jpg" 
+        down="scenes/SGI_TP2_XML_T07_G03_v02/skybox/bottom.jpg" 
+        left="scenes/SGI_TP2_XML_T07_G03_v02/skybox/left.jpg" 
+        right="scenes/SGI_TP2_XML_T07_G03_v02/skybox/right.jpg" 
+        front="scenes/SGI_TP2_XML_T07_G03_v02/skybox/front.jpg" 
+        back="scenes/SGI_TP2_XML_T07_G03_v02/skybox/back.jpg"/>
+
+    <textures>    
+        <texture id="stoneBrickTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/stonebrick.jpg" />
+        <texture id="stoneBrickBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/stonebrick.jpg" />
+        <texture id="stoneBrickSpecial" filepath="scenes/SGI_TP2_XML_T07_G03_v02/specialTextures/stonebrick.jpg" />
+
+
+        <texture id="stoneColumnTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/stonecolumn.jpg" />
+        <texture id="stoneColumnBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/stonecolumn.jpg" />
+
+        <texture id="stoneSlabTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/stoneslab.jpg" />
+        <texture id="stoneSlabBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/stoneslab.jpg" />
+
+        <texture id="fancyBrickTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/fancyBrick.jpg" />
+        <texture id="fancyBrickBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/fancyBrick.jpg" />
+
+        <texture id="grassFloorTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/grass.jpg" />
+        <texture id="grassFloorBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/grass.jpg" />
+
+        <texture id="treeLeavesTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/treeleaves.jpg" />
+        <texture id="treeLeavesBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/treeleaves.jpg" />
+
+        <texture id="dirtTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/dirt.jpg" />
+        <texture id="dirtBump" filepath="scenes/SGI_TP2_XML_T07_G03_v02/bumpTextures/dirt.jpg" />
+
+        <texture id="treeLogTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/treelog.jpg" />
+        <texture id="flowerMainTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/flowerMain.jpg" />
+        <texture id="flowerPetalTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/flowerPetal.jpg" />
+        <texture id="goldTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/gold.jpg" />
+        <texture id="flagTopTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/flagTop.jpg" />
+        <texture id="windowTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/window.jpg" />
+
+        <texture id="waterTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/videos/water.mp4" />
+
+        <texture id="doorTex" filepath="scenes/SGI_TP2_XML_T07_G03_v02/textures/doorMipMaps/door1000.jpg"
+            mipmap0="scenes/SGI_TP2_XML_T07_G03_v02/textures/doorMipMaps/door500.jpg"
+            mipmap1="scenes/SGI_TP2_XML_T07_G03_v02/textures/doorMipMaps/door250.jpg"
+            mipmap2="scenes/SGI_TP2_XML_T07_G03_v02/textures/doorMipMaps/door125.jpg"
+        />
+    </textures> 
+
+    <materials>
+
+        <material id="fakeWindowMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.0 0.0 0.0 0.0" 
+            specular="0 0 0 0" 
+            shininess="0" />
+			
+		<material id="stoneBrickMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="stoneBrickTex"
+            bumpref="stoneBrickBump"
+            specularref="stoneBrickSpecial"
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="stoneBrickBeamMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="stoneBrickTex"
+            bumpref="stoneBrickBump"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+    
+        <material id="stoneBrickColumnMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="stoneBrickTex"
+            bumpref="stoneBrickBump"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+
+        <material id="stoneColumnMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="stoneColumnTex"
+            bumpref="stoneColumnBump"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+
+        <material id="stoneSlabMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="stoneSlabTex"
+            bumpref="stoneSlabBump"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+		
+		<material id="grassFloorMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="grassFloorTex"
+            bumpref="grassFloorBump" 
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="treeLeavesMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.8 0.8 0.8 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="treeLeavesTex" 
+            bumpref="treeLeavesBump" 
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+
+        <material id="treeLeavesWireMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.8 0.8 0.8 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="treeLeavesTex" 
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "true"
+            wireframe = "true" />
+
+        <material id="treeLogMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.8 0.8 0.8 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="treeLogTex"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "true" />
+
+        <material id="dirtMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="dirtTex"
+            bumpref="dirtBump" 
+            texlength_s="1" 
+            texlength_t="1"
+            twosided = "false" />
+
+        <material id="flowerMainMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="flowerMainTex"
+            texlength_s="1" 
+            texlength_t="1"
+            twosided = "false" />
+
+        <material id="flowerPetalMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            twosided="false"
+            textureref="flowerPetalTex"
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="fancyBrickMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="fancyBrickTex"
+            bumpref="fancyBrickBump" 
+            texlength_s="1" 
+            texlength_t="1"
+            twosided = "false" />
+
+        <material id="goldMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.5 0.5 0.5 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="goldTex" 
+            texlength_s="1" 
+            texlength_t="1"
+            twosided = "false" />
+
+        <material id="flagTopMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="1.0 1.0 1.0 1.0"  
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="flagTopTex" 
+            texlength_s="1.6" 
+            texlength_t="2.5"
+            twosided = "false" />
+
+        <material id="flagBottomMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="1.0 0.8 0.0 1.0"  
+            specular="0 0 0 0" 
+            shininess="0"  />
+
+        <material id="windowMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="1.0 1.0 1.0 1.0"  
+            specular="0 0 0 0" 
+            shininess="5" 
+            textureref="windowTex" 
+            texlength_s="1" 
+            texlength_t="1"
+            twosided = "false" />
+
+        <material id="topWindowMat" 
+            emissive="0.0 0.0 0.0 1" 
+            color="0.79 0.88 0.87 1.0"  
+            specular="0.79 0.88 0.87 1.0" 
+            shininess="5"  />
+
+        <material id="waterMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="waterTex"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+
+        <material id="doorMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="doorTex"
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "false" />
+
+    </materials> 
+
+    <graph rootid="scene"> 
+
+        <lod id="test1">
+            <noderef id="skySphere2" mindist="0"/>
+        </lod>
+
+        <lod id="test2">
+            <noderef id="skySphere2" mindist="20"/>
+            <noderef id="skySphere" mindist="0"/>
+        </lod>
+		
+		<node id="scene"> 
+            <children> 
+
+                <!--noderef id="testing" /-->
+
+                <!-- sky and its decorations-->
+                <!--noderef id="skySphere" /-->
+
+                <!-- backdrop -->
+                <lodref id="castleBackdropLod"/>
+            
+                <!-- walls-->
+                <noderef id="wall1" />
+                <noderef id="wall2" />
+                <noderef id="wall3" />
+                <noderef id="wall4" />
+                <noderef id="wall5" />
+                <noderef id="wall6" />
+                <noderef id="wall7" />
+                <noderef id="wall8" />
+
+                <!-- floors -->
+                <!--noderef id="floorBase" /-->
+				<noderef id="floorMain" /> 
+                <noderef id="entranceBridge" />
+                <noderef id="balcony" />
+
+                <!-- water -->
+                <noderef id="water" />
+				 
+                <!-- trees -->
+				<noderef id="tree1" /> 
+				<noderef id="tree2" /> 
+				<noderef id="tree3" /> 
+                <noderef id="shrub1"/>
+                <noderef id="shrub2"/>
+                <noderef id="shrub3"/>
+         
+                <directionallight id="sunLight" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="1.0"
+                    castshadow="true"
+                    shadowleft="1"
+                    position="-1 10 -1" 
+                /> 
+
+                <spotlight id="sunHelper" enabled="true" 
+                    color="1.0 0.9 0.3 1" 
+                    intensity="30.0"
+                    distance="100"
+                    decay="1.0"
+                    castshadow="true"
+                    position="-1 10 1" 
+                    target="-4 0 -2"
+                    penumbra="1.0"
+                    angle="60" 
+                /> 
+                
+            </children> 
+        </node>
+
+        <!-- BACKDROPS -->
+
+        <node id="castleBackdrop1">
+            <children>
+                <noderef id="frontCastle1"/>
+                <noderef id="sideCastle1"/>
+            </children>
+        </node>
+
+        <node id="castleBackdrop2">
+            <children>
+                <noderef id="frontCastle2"/>
+                 <noderef id="sideCastle2"/>
+            </children>
+        </node>
+
+        <node id="castleBackdrop3">
+            <children>
+                <noderef id="frontCastle3"/>
+                 <noderef id="sideCastle3"/>
+            </children>
+        </node>
+
+        <node id="frontCastle1">
+
+            <transforms>
+                <rotate value3="0 1.570796 0"/>
+            </transforms>
+
+            <children>
+                <noderef id="frontCastleTop"/>
+                <noderef id="frontCastleWall"/>
+                <noderef id="windowFake"/>
+            </children>
+        </node>
+
+        <node id="frontCastle2">
+
+            <transforms>
+                <rotate value3="0 1.570796 0"/>
+            </transforms>
+
+            <children>
+                <noderef id="frontCastleTop"/>
+                <noderef id="frontCastleWall"/>
+            </children>
+        </node>
+
+        <node id="frontCastle3">
+
+            <transforms>
+                <rotate value3="0 1.570796 0"/>
+            </transforms>
+
+            <children>
+                <noderef id="frontCastleWall"/>
+            </children>
+        </node>
+
+        <node id="frontCastleWall">
+
+            <transforms>
+                <translate value3="0 0 -13" />
+            </transforms>
+
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-7 7" xy2="13 15" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="windowFake">
+
+             <transforms>
+                <translate value3="0 0 -12.9" />
+            </transforms>
+
+            <materialref id="fakeWindowMat" />
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-5 11.5" xy2="-4 13.5"/> 
+                </primitive>
+                <primitive>
+                    <rectangle xy1="1 11.5" xy2="2 13.5"/> 
+                </primitive>
+                 <primitive>
+                    <rectangle xy1="7 11.5" xy2="8 13.5"/> 
+                </primitive>
+            </children>
+        </node>
+
+        <node id="frontCastleTop">
+
+            <transforms>
+                <translate value3="1 0 0"/>
+            </transforms>
+
+            <materialref id="fancyBrickMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-8.5 14.5 -13" xyz2="12 15 -12.7"/>
+                </primitive>
+                <primitive>
+                    <box xyz1="-8.5 14.5 -15" xyz2="-8 15 -12.7"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="sideCastle1">
+
+            <children>
+                <noderef id="sideCastleTop"/>
+                <noderef id="sideCastleWall"/>
+                <noderef id="sideWindowFake"/>
+            </children>
+        </node>
+
+        <node id="sideCastle2">
+
+            <children>
+                <noderef id="sideCastleTop"/>
+                <noderef id="sideCastleWall"/>
+            </children>
+        </node>
+
+        <node id="sideCastle3">
+
+            <children>
+                <noderef id="sideCastleWall"/>
+            </children>
+        </node>
+
+         <node id="sideCastleWall">
+
+            <transforms>
+                <translate value3="0 0 -13" />
+            </transforms>
+
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-17 7" xy2="14 17" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="sideWindowFake">
+
+             <transforms>
+                <translate value3="0 0 -12.9" />
+            </transforms>
+
+            <materialref id="fakeWindowMat"/>
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-7 11.5" xy2="-6 13.5"/> 
+                </primitive>
+                <primitive>
+                    <rectangle xy1="-1 11.5" xy2="0 13.5"/> 
+                </primitive>
+            </children>
+        </node>
+
+
+        <node id="sideCastleTop">
+
+            <transforms>
+                <translate value3="1 0 0"/>
+            </transforms>
+
+            <materialref id="fancyBrickMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-18.5 16.5 -13" xyz2="13.5 17 -12.7"/>
+                </primitive>
+                <primitive>
+                    <box xyz1="13 16.5 -15" xyz2="13.5 17 -12.7"/>
+                </primitive>
+            </children>
+        </node>
+
+        <!-- COLUMNS -->
+
+        <node id="luminary">
+
+            <transforms>
+                <rotate value3="0 2.661627 0"/>
+                <translate value3="0 0 -0.5"/>
+            </transforms>
+
+            <materialref id="treeLogMat"/>
+            <children>
+                <pointlight id="light" enabled="true" 
+                    color="1.0 1.0 0.1 1" 
+                    intensity="1.0"
+                    distance="10"
+                    decay="2.0"
+                    castshadow="true"
+                    position="0 1.4 0" 
+                /> 
+                <primitive>
+                    <nurbs degree_u="2" degree_v="2" parts_u="20" parts_v="20" distance="0.0">
+                        <controlpoint xx="0" yy="0" zz="0" />
+                        <controlpoint xx="0" yy="0" zz="0" />
+                        <controlpoint xx="0" yy="0" zz="0" />
+                        <controlpoint xx="-0.3" yy="0.6" zz="0" />
+                        <controlpoint xx="0" yy="0.6" zz="-0.2" />
+                        <controlpoint xx="0.3" yy="0.6" zz="0" />
+                        <controlpoint xx="-0.2" yy="1" zz="0" />
+                        <controlpoint xx="0" yy="1" zz="-0.3" />
+                        <controlpoint xx="0.2" yy="1" zz="0" />
+                    </nurbs>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="columnModel">
+
+            <transforms>
+                <translate value3="3.5 3.5 0" />
+            </transforms>
+
+            <children>
+                <noderef id="columnMain" />
+                <noderef id="columnDecoration1" />
+                <noderef id="columnDecoration2" />
+                <noderef id="luminary" />
+            </children>
+        </node>
+
+        <node id="columnMain">
+
+            <transforms>
+                <translate value3="0 2 0" />
+            </transforms>
+
+            <materialref id="stoneColumnMat" />
+
+            <children>
+                <primitive>
+                    <cylinder base="0.5" top="0.5" height="10" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="columnDecoration1">
+
+            <transforms>
+                <translate value3="0 3.5 0" />
+            </transforms>
+
+            <materialref id="stoneBrickColumnMat" />
+
+            <children>
+                 <primitive>
+                    <cylinder base="0.6" top="0.7" height="0.7" slices="32" stacks="32" capsclose="true" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="columnDecoration2">
+
+            <transforms>
+                <translate value3="0 6.8 0" />
+            </transforms>
+
+            <materialref id="stoneBrickColumnMat" />
+
+            <children>
+                 <primitive>
+                    <cylinder base="0.6" top="0.7" height="0.7" slices="32" stacks="32" capsclose="true" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="fancyColumnPart1">
+
+            <transforms>
+                <rotate value3='0 0 -0.5235988' />
+                <translate value3='-1.625 2.725 0' />
+            </transforms>
+
+            <children>
+                <primitive>
+                     <box xyz1="-2.61 0 0" xyz2="-1.9 4.2 0.499" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="fancyColumnPart2">
+
+            <transforms>
+                <rotate value3='0 0 0.5235988' />
+                <translate value3='1.625 2.725 0' />
+            </transforms>
+
+            <children>
+                <primitive>
+                     <box xyz1="2.61 0 0" xyz2="1.9 4.2 0.4898" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="fancyColumnPart3">
+
+            <transforms>
+                <rotate value3='0 0 0.7853982' />
+                <translate value3='5.6 5.6 0' />
+            </transforms>
+
+            <children>
+                <primitive>
+                     <box xyz1="0 0 0" xyz2="0.3 0.3 0.5" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="fancyColumn1">
+
+            <materialref id="fancyBrickMat" />
+
+            <children>
+                <noderef id="fancyColumnPart1" />
+                <noderef id="fancyColumnPart2" />
+                <noderef id="fancyColumnPart3" />
+                <primitive>
+                     <box xyz1="-2.3 0 0" xyz2="-1.6 4.5 0.5" />
+                </primitive>
+                <primitive>
+                     <box xyz1="2.3 0 0" xyz2="1.6 4.5 0.5" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- BEAMS-->
+
+        <node id="beamModel1">
+
+            <transforms>
+                <translate value3="0 0.9 0" />
+            </transforms>
+
+            <materialref id="stoneBrickBeamMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-3.5 0 0" xyz2="3.5 0.4 0.2" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="beamModel2">
+
+            <transforms>
+                <translate value3="0 2.5 0" />
+            </transforms>
+
+            <materialref id="stoneBrickBeamMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-3.5 0 0" xyz2="3.5 0.4 0.2" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="beamModel3">
+
+            <transforms>
+                <translate value3="0 6.8 0" />
+            </transforms>
+
+            <materialref id="stoneBrickBeamMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-3.5 0 0" xyz2="3.5 0.4 0.2" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="beamModel4">
+
+            <transforms>
+                <translate value3="0 10 0" />
+            </transforms>
+
+            <materialref id="stoneBrickBeamMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="-3.5 0 0" xyz2="3.5 0.4 0.2" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- WINDOW MODEL -->
+
+        <node id="windowFramePart1" >
+            <transforms>
+                <rotate value3="0 0 -0.6108652" />
+                <translate value3="-1.6 2.3 0"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <box xyz1="-0.21 0 0" xyz2="1.1325 0.3 0.2001" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="windowFramePart2" >
+            <transforms>
+                <rotate value3="0 0 0.6108652" />
+                <translate value3="1.6 2.3 0"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <box xyz1="-1.132 0 0" xyz2="0.21 0.3 0.2002" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="windowFrame">
+
+            <materialref id="fancyBrickMat" />
+
+            <children>
+                <noderef id="windowFramePart1"/>
+                <noderef id="windowFramePart2"/>
+                <primitive>
+                    <box xyz1="-1.2 0 0" xyz2="1.2 0.4 0.3" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-1.1 0.4 0" xyz2="-0.8 2.4 0.2" />
+                </primitive>
+                 <primitive>
+                    <box xyz1="0.8 0.4 0" xyz2="1.1 2.4 0.2" />
+                </primitive>
+                <!-- inside decor -->
+                <primitive>
+                    <box xyz1="-1.0 1.2 0" xyz2="1.0 1.3 0.1" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-1.0 2.2 0" xyz2="1.0 2.3 0.1" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-0.05 0.4 0" xyz2="0.05 3 0.1001" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="windowInterior">
+
+            <transforms>
+                <translate value3="0 0 0.05"/>
+            </transforms>
+
+            <materialref id="windowMat"/>
+            <children>
+                <primitive>
+                    <rectangle xy1="-1 0" xy2="1 2.3" />
+                </primitive>
+                <noderef id="topWindowInterior"/>
+            </children>
+        </node>
+
+        <node id="topWindowInterior">
+             <materialref id="topWindowMat"/>
+            <children>
+                <primitive>
+                    <triangle 
+                        xyz1="-1 2.3 0" 
+                        xyz2="1 2.3 0"
+                        xyz3="0 3 0" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="commonWindow">
+
+            <transforms>
+                <translate value3="0 3.2 0" />
+                <scale value3="0.5 0.5 0.5" />
+            </transforms>
+
+            <children>
+                <noderef id="windowInterior" />
+                <noderef id="windowFrame"/>
+            </children>
+        </node>
+
+        <!-- TRIFORCE -->
+
+        <node id="castleCrestBase">
+
+            <children>
+                <primitive>
+                    <polygon 
+                            radius="0.5"
+                            stacks="4"
+                            slices="8"
+                            color_c="0.2 0.2 0.2 0.5"
+                            color_p="0.0 0.0 0.0 0.5" /> 
+                </primitive>
+            </children>
+        </node>
+
+        <node id="castleCrestTriforce">
+
+            <materialref id="goldMat"/>
+
+            <children>
+                <primitive>
+                    <triangle
+                        xyz1="-0.3 -0.15 0.02"
+                        xyz2="0.0 -0.15 0.02"
+                        xyz3="-0.15 0.11 0.02"/>
+                </primitive>
+                <primitive>
+                    <triangle
+                        xyz1="0 -0.15 0.02"
+                        xyz2="0.3 -0.15 0.02"
+                        xyz3="0.15 0.11 0.02"/>
+                </primitive>
+                <primitive>
+                    <triangle
+                        xyz1="-0.15 0.11 0.02"
+                        xyz2="0.15. 0.11 0.02"
+                        xyz3="0 0.37 0.02"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="castleCrestModel">
+
+            <transforms>
+                <translate value3="0 5.8 0.1"/>
+            </transforms>
+
+            <children>
+                <noderef id="castleCrestBase" />
+                <noderef id="castleCrestTriforce" />
+            </children>
+        </node>
+
+        <!-- FLAGS -->
+
+        <node id="flag">
+
+            <transforms>
+                <translate value3="0 6.6 0.01"/>
+            </transforms>
+
+            <children>
+                <noderef id="flagSupport"/>
+                <noderef id="flagTop"/>
+                <noderef id="flagBottom"/>
+            </children>
+        </node>
+
+        <node id="flagTop">
+
+            <materialref id="flagTopMat" />
+            <children>
+                <primitive>
+                    <rectangle xy1="-0.8 0" xy2="0.8 -2.5"/>
+                    </primitive>
+            </children>
+        </node>
+
+        <node id="flagBottom">
+            <materialref id="flagBottomMat" />
+            <children>
+                <primitive>
+                    <triangle 
+                        xyz1="-0.8 -3.5 0" 
+                        xyz2="0 -2.5 0"
+                        xyz3="-0.8 -2.5 0"/>
+                </primitive>
+                <primitive>
+                    <triangle 
+                        xyz1="0.8 -3.5 0" 
+                        xyz2="0.8 -2.5 0"
+                        xyz3="0 -2.5 0"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="flagSupport">
+            <materialref id="goldMat" />
+            <children>
+                <noderef id="flagSupportBall1"/>
+                <noderef id="flagSupportRod"/>
+                <noderef id="flagSupportBall2"/>
+            </children>
+        </node>
+
+        <node id="flagSupportBall1">
+
+            <transforms>
+                <translate value3="-0.8 0 0"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <sphere radius="0.12" slices="10" stacks="10" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="flagSupportBall2">
+
+             <transforms>
+                <translate value3="0.8 0 0"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <sphere radius="0.12" slices="10" stacks="10" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="flagSupportRod">
+
+            <transforms>
+                <rotate value3="0 0 1.570796"/>
+            </transforms>
+
+            <children>
+                <primitive>          
+                    <cylinder base="0.1" top="0.1" height="1.5" slices="8" stacks="32" capsclose="true" />
+                </primitive> 
+            </children>
+        </node>
+
+        <!-- WALLS -->
+
+        <node id="wallDoorModel">
+
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <noderef id="columnModel" />
+                <noderef id="beamModel1" />
+                <noderef id="beamModel3" />
+                <noderef id="beamModel4" />
+                <noderef id="fancyColumn1" />
+                <noderef id="door"/>
+                <primitive>          
+                    <rectangle xy1="-3.5 0" xy2="3.5 10" /> 
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="wallWindowModel">
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <noderef id="commonWindow" />
+
+
+                <noderef id="columnModel" />
+                <noderef id="beamModel1" />
+                <noderef id="beamModel2" />
+                <noderef id="beamModel3" />
+                <noderef id="beamModel4" />
+                <primitive>          
+                    <rectangle xy1="-3.5 0" xy2="3.5 10" /> 
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="balconyWallModel">
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <noderef id="fancyColumn1" />
+                <noderef id="castleCrestModel"/>
+                <noderef id="commonWindow" />
+                <noderef id="columnModel" />
+                <noderef id="beamModel1" />
+                <noderef id="beamModel2" />
+                <noderef id="beamModel3" />
+                <noderef id="beamModel4" />
+                <primitive>         
+                    <rectangle xy1="-3.5 0" xy2="3.5 10" /> 
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="wallFlagModel">
+            <materialref id="stoneBrickMat" />
+
+            <children>
+                <noderef id="columnModel" />
+                <noderef id="beamModel1" />
+                <noderef id="beamModel2" />
+                <noderef id="beamModel3" />
+                <noderef id="beamModel4" />
+                <noderef id="flag"/>
+                <primitive>         
+                    <rectangle xy1="-3.5 0" xy2="3.5 10" /> 
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="wall1" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="0 0 -8.45" />
+            </transforms> 
+
+            <children>
+                <noderef id="wallWindowModel" />
+            </children> 
+        </node>
+
+        <node id="wall2" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="5.97 0 -5.97" />
+				<rotate value3="0.0 -0.7853982 0.0" />
+            </transforms> 
+
+            <children>   
+                 <noderef id="wallFlagModel" />
+            </children> 
+        </node>
+
+        <node id="wall3" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="8.45 0 0" />
+				<rotate value3="0.0 -1.570796 0.0" />
+            </transforms> 
+
+            <children>   
+                 <noderef id="wallDoorModel" /> 
+            </children> 
+        </node>
+
+        <node id="wall4" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="5.97 0 5.97" />
+				<rotate value3="0.0 -2.356194 0.0" />
+            </transforms> 
+
+            <children>   
+                 <noderef id="wallFlagModel" />
+            </children> 
+        </node>
+
+        <node id="wall5" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="0 0 8.45" />
+				<rotate value3="0.0 -3.141593 0.0" />
+            </transforms> 
+
+            <children>   
+                <noderef id="wallWindowModel" />
+            </children> 
+        </node>
+
+        <node id="wall6" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="-5.97 0 5.97" />
+				<rotate value3="0.0 -3.926991 0.0" />
+            </transforms> 
+
+            <children>   
+                <noderef id="wallFlagModel" />
+            </children> 
+        </node>
+
+        <node id="wall7" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="-8.45 0 0" />
+				<rotate value3="0.0 -4.712389 0.0" />
+            </transforms> 
+
+            <children>   
+                <noderef id="balconyWallModel" />
+            </children> 
+        </node>
+
+        <node id="wall8" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<translate value3="-5.97 0 -5.97" />
+				<rotate value3="0.0 -5.497787 0.0" />
+            </transforms> 
+
+            <children>   
+                 <noderef id="wallFlagModel" />
+            </children> 
+        </node>
+
+        <!-- FLOORS -->
+
+        <node id="floorBase" castshadows="true" receiveshadows="true">
+
+            <transforms>
+                <rotate value3="-1.570796 0 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-8.5 -8.5" xy2="8.5 8.5" />
+                </primitive>
+            </children>
+        </node>
+
+		<node id="floorMain" castshadows="true" receiveshadows="true"> 
+
+            <transforms>
+				<rotate value3="0.0 0.3926991 0.0" />
+                <translate value3="0 0.75 0" />
+            </transforms> 
+
+            <materialref id="grassFloorMat" />
+
+            <children>  
+                <noderef id="flowerBedPair" /> 
+                <primitive>          
+                    <cylinder base="7" top="7" height="1.5" slices="8" stacks="32" capsclose="true" />
+                </primitive> 
+            </children> 
+        </node>
+
+        <node id="entranceBridge" castshadows="true" receiveshadows="true">
+            <transforms>
+                <translate value3="0 1.3 0" />
+            </transforms>
+
+            <materialref id="stoneSlabMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="9 0 -1.6" xyz2="6.465 0.2 1.6" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- DOOR -->
+
+        <node id="doorFrame">
+            <materialref id="stoneBrickMat"/>
+            <children>
+                <primitive>
+                    <box xyz1="0 0 -1.2" xyz2="2 0.35 -1" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-0.2 0 -1.2" xyz2="0 0.35 2" />
+                </primitive>
+                <primitive>
+                    <box xyz1="2 0 -1.2" xyz2="2.2 0.35 2" />
+                </primitive>
+            </children>
+        </node>
+        
+        <node id="door">
+            <transforms>
+                <rotate value3="1.570796 0 0" />
+                <translate value3="-1 0.1 -3.5" />
+            </transforms>
+            <materialref id="doorMat" />
+            <children>
+                <noderef id="doorFrame"/>
+                <primitive>
+                    <box xyz1="0 0 -1" xyz2="2 0.2 2" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- BALCONY -->
+
+        <!-- STAIRS -->
+
+        <node id="stepModel">
+            <materialref id="stoneSlabMat" />
+            <children>
+                <primitive>
+                    <box xyz1="0.1 0 -0.9" xyz2="-0.1 0.2 0.9" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="step1">
+            <transforms>
+                <translate value3="0 0 0" />
+            </transforms>
+            <children>
+                <noderef id="stepModel" />
+            </children>
+        </node>
+
+        <node id="step2">
+            <transforms>
+                <translate value3="-0.2 0.1 0" />
+            </transforms>
+            <children>
+                <noderef id="stepModel" />
+            </children>
+        </node>
+
+        <node id="step3">
+            <transforms>
+                <translate value3="-0.4 0.2 0" />
+            </transforms>
+            <children>
+                <noderef id="stepModel" />
+            </children>
+        </node>
+
+        <node id="stairs">
+            <transforms>
+                <translate value3="-6.75 0.1 0" />
+            </transforms>
+
+            <children>
+                <noderef id="step1"/>
+                <noderef id="step2"/>
+                <noderef id="step3"/>
+            </children>
+
+        </node>
+        
+        <!-- RAILS -->
+
+        <node id="diagonalRails">
+            <transforms>
+                <rotate value3="0 0 -0.5235988" />
+            </transforms>
+
+            <materialref id="stoneSlabMat" />
+
+            <children>
+                <primitive>
+                    <box xyz1="0.4 0 -0.4" xyz2="-0.399 0.4 0.399" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="sideRails">
+
+            <transforms>
+                <translate value3="-0.795 0 0" />
+            </transforms>
+
+            <materialref id="stoneSlabMat" />
+            
+            <children>
+                <primitive>
+                    <box xyz1="0.65 0 -0.4" xyz2="-0.65 0.55 0.4" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="balconyRailModel">
+            <transforms>
+                <translate value3="-7.02 0.055 0" />
+            </transforms>
+           
+            <children>
+               <noderef id="diagonalRails" />
+               <noderef id="sideRails" />
+            </children>
+        </node>
+
+        <node id="balconyRail1">
+
+            <transforms>
+                <translate value3="0 0 1.18" />
+            </transforms>
+
+            <children>
+                <noderef id="balconyRailModel" />
+            </children>
+        </node>
+
+        <node id="balconyRail2">
+
+            <transforms>
+                <translate value3="0 0 -1.18" />
+            </transforms>
+
+            <children>
+                <noderef id="balconyRailModel" />
+            </children>
+        </node>
+
+        <node id="balcony" castshadows="true" receiveshadows="true">
+            <transforms>
+                <translate value3="0 1.3 0" />
+            </transforms>
+
+            <materialref id="stoneSlabMat" />
+
+            <children>
+                <noderef id="balconyRail1" />
+                <noderef id="balconyRail2" />
+                <noderef id="stairs" />
+                <primitive>
+                    <box xyz1="-9 0 -1.6" xyz2="-6.465 0.2 1.6" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-9 0.35 -1" xyz2="-7.25 0.5 1" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- WATER -->
+
+        <node id="water" castshadows="true" receiveshadows="true">
+
+            <transforms>
+                <rotate value3="-1.570796 0 0" />
+                <translate value3="0 0 1" />
+            </transforms>
+
+            <materialref id="waterMat" />
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-8.5 -8.5" xy2="8.5 8.5" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- TREES -->
+
+        <node id="trunk">
+			<transforms>
+				<translate value3="0 1.7 0" />
+			</transforms> 
+			
+			<materialref id="treeLogMat" />
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.4" top="0.4" height="3" slices="32" stacks="32" />
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="treeSeg1">
+			<transforms>
+				<translate value3="0 2.7 0" />
+            </transforms> 
+			
+			<materialref id="treeLeavesMat" />
+			
+            <children>             
+                <primitive>
+                    <cylinder base="2" top="1" height="1.9" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="treeSeg2">
+			<transforms>
+				<translate value3="0 4.6 0" />
+            </transforms> 
+			
+			<materialref id="treeLeavesMat" />
+			
+            <children>
+                <primitive >
+                    <cylinder base="1.5" top="0.75" height="2" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="treeSeg3">
+			<transforms>
+				<translate value3="0 6.6 0" />
+            </transforms> 
+			
+			<materialref id="treeLeavesMat" />
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.9" top="0" height="2" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+
+            </children> 
+        </node>
+		
+		<node id="tree1" castshadows="true" receiveshadows="true">
+			<transforms>
+                <scale value3="0.4 0.6 0.4" />
+				<translate value3="10 1 -10" />
+            </transforms> 
+			
+            <children>             
+				<noderef id="trunk" />
+				<noderef id="treeSeg1" />
+				<noderef id="treeSeg2" />
+				<noderef id="treeSeg3" />
+            </children> 
+        </node>
+
+        <node id="tree2" castshadows="true" receiveshadows="true">
+			<transforms>
+				<translate value3="-3.2 1 4.7" />
+                 <scale value3="0.2 0.5 0.2" />
+            </transforms> 
+			
+            <children>             
+				<noderef id="trunk" />
+				<noderef id="treeSeg1" />
+				<noderef id="treeSeg2" />
+				<noderef id="treeSeg3" />
+            </children> 
+        </node>
+
+        <node id="tree3" castshadows="true" receiveshadows="true">
+			<transforms>
+				<translate value3="-4.7 1 3.7" />
+                 <scale value3="0.2 0.4 0.2" />
+            </transforms> 
+			
+            <children>             
+				<noderef id="trunk" />
+				<noderef id="treeSeg1" />
+				<noderef id="treeSeg2" />
+				<noderef id="treeSeg3" />
+            </children> 
+        </node>
+
+        <node id="shrubFoliage">
+            <transforms>
+                <translate value3="0 2.5 0"/>
+            </transforms>
+
+            <materialref id="treeLeavesWireMat" />
+            <children>             
+                <primitive>
+                    <sphere radius="1" slices="30" stacks="30" />
+                </primitive>
+
+            </children> 
+        </node>
+
+        <node id="shrubTrunk">
+			<transforms>
+				<translate value3="0 1.7 0" />
+			</transforms> 
+			
+			<materialref id="treeLogMat" />
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.2" top="0" height="3" slices="32" stacks="32" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="shrubModel">
+
+            <transforms>
+                <scale value3="0.2 0.2 0.2"/>
+            </transforms>
+
+            <children>
+                <noderef id="shrubFoliage" />
+                <noderef id="shrubTrunk"/>
+            </children>
+        </node>
+
+        <node id="shrub1">
+
+            <transforms>
+                <translate value3="3.312 1.4 5.1324"/>
+            </transforms>
+
+            <children>
+                <noderef id="shrubModel"/>
+            </children>
+        </node>
+
+        <node id="shrub2">
+
+            <transforms>
+                <translate value3="3.73 1.4 3.72"/>
+            </transforms>
+
+            <children>
+                <noderef id="shrubModel"/>
+            </children>
+        </node>
+
+        <node id="shrub3">
+
+            <transforms>
+                <translate value3="4.8 1.4 3.645"/>
+            </transforms>
+
+            <children>
+                <noderef id="shrubModel"/>
+            </children>
+        </node>
+
+
+        <!-- FLOWER BEDS -->
+
+        <node id="flowerBoxModel" castshadows="true" receiveshadows="true">
+
+            <materialref id="stoneBrickMat" />
+
+            <children>   
+                <primitive>          
+				    <box xyz1="0 0 0" xyz2="0.1 0.2 3" />
+                </primitive>
+                <primitive>          
+				    <box xyz1="0.1 0 0" xyz2="4.9 0.2 0.1" />
+                </primitive>
+                <primitive>          
+				    <box xyz1="0.1 0 2.9" xyz2="4.9 0.2 3" />
+                </primitive>
+                <primitive>          
+				    <box xyz1="4.9 0 0" xyz2="5 0.2 3" />
+                </primitive>
+
+            </children> 
+        </node>
+
+        <!-- flower -->
+
+        <node id="flowerCenter">
+
+            <transforms>
+                <translate value3="0 0.05 0" />
+                <scale value3="1 0.2 1" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <sphere radius="0.015" slices="10" stacks="10" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="flowerPetal">
+            <transforms>
+                <translate value3="0 0.05 0.05" />
+                <scale value3="0.005 0.005 0.005"/>
+                <rotate value3="-1.570796 0 0"/>
+            </transforms>
+
+            <materialref id="flowerPetalMat"/>
+
+            <children>
+                <primitive>
+                    <nurbs degree_u="2" degree_v="2" parts_u="20" parts_v="20" distance="0.0">
+                        <controlpoint xx="-2" yy="10" zz="0" />
+                        <controlpoint xx="0" yy="10" zz="-1" />
+                        <controlpoint xx="2" yy="10" zz="0" />
+                        <controlpoint xx="-3" yy="6" zz="0" />
+                        <controlpoint xx="0" yy="6" zz="-0.5" />
+                        <controlpoint xx="3" yy="6" zz="0" />
+                        <controlpoint xx="0" yy="0" zz="0" />
+                        <controlpoint xx="0" yy="0" zz="0" />
+                        <controlpoint xx="0" yy="0" zz="0" />
+                    </nurbs>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="flowerPetal1">
+            <children>
+                <noderef id="flowerPetal"/>
+            </children>
+        </node>
+
+        <node id="flowerPetal2">
+            <transforms>
+                <rotate value3="0 1.256637 0" />
+            </transforms>
+            <children>
+                <noderef id="flowerPetal"/>
+            </children>
+        </node>
+
+        <node id="flowerPetal3">
+            <transforms>
+                <rotate value3="0 2.513274 0" />
+            </transforms>
+            <children>
+                <noderef id="flowerPetal"/>
+            </children>
+        </node>
+
+        <node id="flowerPetal4">
+            <transforms>
+                <rotate value3="0 3.769911 0" />
+            </transforms>
+            <children>
+                <noderef id="flowerPetal"/>
+            </children>
+        </node>
+
+        <node id="flowerPetal5">
+         <transforms>
+                <rotate value3="0 5.026548 0" />
+            </transforms>
+            <children>
+                <noderef id="flowerPetal"/>
+            </children>
+        </node>
+
+        <node id="flowerModel" castshadows="false" receiveshadows="false">
+
+            <transforms>
+                <scale value3="2 2 2"/>
+            </transforms>
+
+            <materialref id="flowerMainMat"/>
+
+            <children>
+                <!-- Flower Petals -->
+                <noderef id="flowerPetal1" />
+                <noderef id="flowerPetal2" />
+                <noderef id="flowerPetal3" />
+                <noderef id="flowerPetal4" />
+                <noderef id="flowerPetal5" />
+
+                <!-- Flower Center -->
+                <noderef id="flowerCenter" />
+
+                <!-- Stem -->
+                <primitive>
+                    <cylinder base="0.005" top="0.005" height="0.1" slices="10" stacks="10" />
+                </primitive>
+                
+            </children>
+        </node>
+
+        <node id="flower0">
+            <transforms>
+                <translate value3="2.653719927342612 0.2 1.4578406520983443"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower1">
+            <transforms>
+                <translate value3="4.034268156463468 0.2 0.7078128323130842"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower2">
+            <transforms>
+                <translate value3="1.6673859150744167 0.2 2.452521489759476"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower3">
+            <transforms>
+                <translate value3="1.1821853673401424 0.2 0.9671778115247805"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower4">
+            <transforms>
+                <translate value3="3.9462401941405615 0.2 0.6615126981666615"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower5">
+            <transforms>
+                <translate value3="0.8930657367343296 0.2 1.246452001520046"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower6">
+            <transforms>
+                <translate value3="4.422251032276134 0.2 2.475762765748951"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower7">
+            <transforms>
+                <translate value3="2.4088442534650057 0.2 2.165168751959156"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower8">
+            <transforms>
+                <translate value3="3.369913232098752 0.2 1.5955149587335028"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower9">
+            <transforms>
+                <translate value3="2.058198673259479 0.2 2.251832452175844"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower10">
+            <transforms>
+                <translate value3="1.0930983714082136 0.2 2.605487741899033"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower11">
+            <transforms>
+                <translate value3="3.289305907853325 0.2 0.6476799855262647"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower12">
+            <transforms>
+                <translate value3="4.135583376726107 0.2 1.0566903032546676"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower13">
+            <transforms>
+                <translate value3="3.8237867432585414 0.2 2.4619078129965655"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower14">
+            <transforms>
+                <translate value3="4.647948320621356 0.2 0.7564918230830193"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower15">
+            <transforms>
+                <translate value3="0.5877720088738954 0.2 2.067217992040529"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower16">
+            <transforms>
+                <translate value3="0.32350664836752176 0.2 1.845184377893586"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower17">
+            <transforms>
+                <translate value3="4.251981550141058 0.2 2.127617306702492"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower18">
+            <transforms>
+                <translate value3="0.5236707681462953 0.2 0.954819258516338"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower19">
+            <transforms>
+                <translate value3="2.724143497864709 0.2 1.8026415182271126"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower20">
+            <transforms>
+                <translate value3="3.315679105011279 0.2 1.004540711329914"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower21">
+            <transforms>
+                <translate value3="0.3949917887263793 0.2 2.468663633616411"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower22">
+            <transforms>
+                <translate value3="3.459722580738031 0.2 2.3815444803327354"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower23">
+            <transforms>
+                <translate value3="1.176104034726719 0.2 1.158333073404733"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower24">
+            <transforms>
+                <translate value3="1.3178885125070008 0.2 2.7461361893505234"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower25">
+            <transforms>
+                <translate value3="3.145541465137586 0.2 1.4841026534587502"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower26">
+            <transforms>
+                <translate value3="0.2349663677357766 0.2 1.162864266526521"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower27">
+            <transforms>
+                <translate value3="4.548924875318195 0.2 1.309334533029855"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower28">
+            <transforms>
+                <translate value3="4.411710731487768 0.2 1.5651565852155622"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower29">
+            <transforms>
+                <translate value3="2.868164666891988 0.2 2.550308643598807"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower30">
+            <transforms>
+                <translate value3="0.2934896439441492 0.2 0.5651912400516285"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower31">
+            <transforms>
+                <translate value3="4.760424648866013 0.2 2.112340344676203"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower32">
+            <transforms>
+                <translate value3="4.611304878071401 0.2 0.9528089407879351"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower33">
+            <transforms>
+                <translate value3="1.8361116832821946 0.2 0.6310892763005505"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower34">
+            <transforms>
+                <translate value3="2.9329924284720466 0.2 1.3497982581214386"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower35">
+            <transforms>
+                <translate value3="4.324830216101733 0.2 1.692131682693324"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower36">
+            <transforms>
+                <translate value3="1.5092980138548784 0.2 0.857607468396853"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower37">
+            <transforms>
+                <translate value3="2.1476782651801067 0.2 1.552975301883804"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower38">
+            <transforms>
+                <translate value3="3.585092385070177 0.2 0.775128561751471"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower39">
+            <transforms>
+                <translate value3="4.92518612795923 0.2 2.392645903437778"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower40">
+            <transforms>
+                <translate value3="2.296472133276104 0.2 1.090106463570281"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower41">
+            <transforms>
+                <translate value3="1.9794529305251894 0.2 1.3727575806233318"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower42">
+            <transforms>
+                <translate value3="3.5033603770834255 0.2 2.7931172951717884"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower43">
+            <transforms>
+                <translate value3="0.654169399586915 0.2 1.0052442853131097"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower44">
+            <transforms>
+                <translate value3="1.4390993134392638 0.2 1.9547459385871385"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower45">
+            <transforms>
+                <translate value3="2.5546252767632855 0.2 2.088344130892384"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower46">
+            <transforms>
+                <translate value3="4.187066437550187 0.2 1.944889580332673"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower47">
+            <transforms>
+                <translate value3="4.67313301838423 0.2 1.1580231058766824"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower48">
+            <transforms>
+                <translate value3="3.673122314839091 0.2 2.5107745793208774"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+        <node id="flower49">
+            <transforms>
+                <translate value3="0.47803409112828666 0.2 2.6998992324500793"/>
+            </transforms>
+            <children>
+                <noderef id="flowerModel"/>
+            </children>
+        </node>
+
+
+        <node id="flowerBedModel1">
+
+            <transforms>
+                 <scale value3="0.5 1 0.5" />
+                <translate value3="0 0.7 0" />
+            </transforms>
+
+            <materialref id="dirtMat" />
+
+            <children>   
+                <noderef id="flower0" />
+                <noderef id="flower1" />
+                <noderef id="flower2" />
+                <noderef id="flower3" />
+                <noderef id="flower4" />
+                <noderef id="flower5" />
+                <noderef id="flower6" />
+                <noderef id="flower7" />
+                <noderef id="flower8" />
+                <noderef id="flower9" />
+                <noderef id="flower10" />
+                <noderef id="flower11" />
+                <noderef id="flower12" />
+                <noderef id="flower13" />
+                <noderef id="flower14" />
+                <noderef id="flower15" />
+                <noderef id="flower16" />
+                <noderef id="flower17" />
+                <noderef id="flower18" />
+                <noderef id="flower19" />
+                <noderef id="flower20" />
+                <noderef id="flower21" />
+                <noderef id="flower22" />
+                <noderef id="flower23" />
+                <noderef id="flower24" />
+                <noderef id="flower25" />
+                <noderef id="flower26" />
+                <noderef id="flower27" />
+                <noderef id="flower28" />
+                <noderef id="flower29" />
+                <noderef id="flower30" />
+                <noderef id="flower31" />
+                <noderef id="flower32" />
+                <noderef id="flower33" />
+                <noderef id="flower34" />
+                <noderef id="flower35" />
+                <noderef id="flower36" />
+                <noderef id="flower37" />
+                <noderef id="flower38" />
+                <noderef id="flower39" />
+                <noderef id="flower40" />
+                <noderef id="flower41" />
+                <noderef id="flower42" />
+                <noderef id="flower43" />
+                <noderef id="flower44" />
+                <noderef id="flower45" />
+                <noderef id="flower46" />
+                <noderef id="flower47" />
+                <noderef id="flower48" />
+                <noderef id="flower49" />     
+				<noderef id="flowerBoxModel" />
+                <primitive>          
+				    <box xyz1="0.1 0 0.1" xyz2="4.9 0.1 2.9" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="flowerBedModel2">
+
+            <transforms>
+                 <scale value3="0.5 1 0.5" />
+                <translate value3="0 0.7 0" />
+            </transforms>
+
+            <materialref id="dirtMat" />
+
+            <children>     
+				<noderef id="flowerBoxModel" />
+                <primitive>          
+				    <box xyz1="0.1 0 0.1" xyz2="4.9 0.1 2.9" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="flowerBed1">
+
+            <transforms>
+                <translate value3="-1.75 0 1"/>
+            </transforms>
+
+            <children>
+                <lodref id="flowerBedLod"/>
+            </children>
+        </node>
+
+         <node id="flowerBed2">
+
+            <transforms>
+                <translate value3="-1.75 0 -2.5"/>
+            </transforms>
+
+            <children>
+                <lodref id="flowerBedLod"/>
+            </children>
+        </node>
+
+        <node id="flowerBedPair">
+            <transforms>
+                <rotate value3="0 -0.3926991 0" />
+            </transforms>
+
+            <children>
+                <noderef id="flowerBed1" />
+                <noderef id="flowerBed2" />
+            </children>
+        </node>
+
+        <lod id="flowerBedLod">
+            <noderef id="flowerBedModel1" mindist="0"/>
+            <noderef id="flowerBedModel2" mindist="7"/>
+        </lod>
+
+        <lod id= "castleBackdropLod">
+            <noderef id="castleBackdrop1" mindist="0"/>
+            <noderef id="castleBackdrop2" mindist="45"/>
+            <noderef id="castleBackdrop3" mindist="65"/>
+        </lod>
+		
+    </graph> 
+</yaf> 

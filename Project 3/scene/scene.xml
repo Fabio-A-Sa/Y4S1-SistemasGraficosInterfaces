@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<yaf> 
+	
+    <globals background="0 0 0 1" ambient="1.4 1.4 1.4 1" /> 
+
+    <fog color="1.0 1.0 1.0 1.0" near="0.0" far="2000.0" />
+
+    <cameras initial="Perspective" > 
+
+        <perspective id="Perspective" 
+            angle="60" 
+            near="1" 
+            far="1000" 
+            location="-60 15 60" 
+            target="0 0 0" 
+        />
+
+        <perspective id="Minimap" 
+            angle="60" 
+            near="1" 
+            far="1000" 
+            location="0 100 0" 
+            target="0 0 0" 
+        />
+
+        <perspective id="mainMenu"
+            angle="100" 
+            near="0.1" 
+            far="1000" 
+            location="50 30 108" 
+            target="50 30 120" 
+        />
+
+        <perspective id="endMenu"
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="-75 60 -80.75" 
+            target="-80 60 -90" 
+        />
+
+        <perspective id="pauseMenu"
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="0 25 -108" 
+            target="0 25 -120" 
+        />
+
+        <perspective id="selectUserCar"
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="-80 10 0" 
+            target="-80 5 0" 
+        />
+
+        <perspective id="selectBotCar"
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="10 15 60" 
+            target="10 10 60" 
+        />
+
+        <perspective id="selectTrap"
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="-70 30 100" 
+            target="-70 25 100" 
+        />
+
+        <perspective id="car1" 
+            angle="100" 
+            near="0.1" 
+            far="2000" 
+            location="0 15 0" 
+            target="0 0 0" 
+        />
+
+    </cameras> 
+
+    <skybox size="1000 1000 1000" 
+        center="0 0 0" 
+        emissive="1.0 1.0 1.0 1.0" 
+        intensity="0.0" 
+        up="scene/skybox/nightSky.jpg" 
+        down="scene/skybox/nightSky.jpg" 
+        left="scene/skybox/nightSky.jpg" 
+        right="scene/skybox/nightSky.jpg" 
+        front="scene/skybox/nightSky.jpg" 
+        back="scene/skybox/nightSky.jpg"
+    />
+
+    <textures>    
+
+        <texture id="roadTex" filepath="scene/textures/rainbowRoad.jpg" />
+        <texture id="powerupTex" filepath="scene/textures/powerup.jpg" />
+        <texture id="obstacleTex" filepath="scene/textures/bomb.jpg"/>
+        <texture id="fireworkTex" filepath="scene/textures/stoneslab.jpg" />
+
+        <!-- Cars -->
+        <texture id="car1Tex" filepath="scene/textures/car1.jpg" />
+        <texture id="car2Tex" filepath="scene/textures/car2.jpg" />
+        <texture id="car3Tex" filepath="scene/textures/car3.jpg" />
+        <texture id="car4Tex" filepath="scene/textures/car4.jpg" />
+        <texture id="car5Tex" filepath="scene/textures/car5.jpg" />
+        <texture id="car6Tex" filepath="scene/textures/car6.jpg" />
+
+        <texture id="personTex" filepath="scene/textures/person.jpg"/>
+        <texture id="shirtTex" filepath="scene/textures/shirt.jpg"/>
+
+        <texture id="exhaustTex" filepath="scene/textures/exhaust.jpg"/>
+        <texture id="wheelTex" filepath="scene/textures/wheel.jpg"/>
+        <texture id="carSeatTex" filepath="scene/textures/carSeat.jpg"/>
+        <texture id="wheelAxisTex" filepath="scene/textures/wheelAxis.jpg"/>
+        <texture id="steeringWheelTex" filepath="scene/textures/steeringWheel.jpg"/>
+
+        <!-- Planets & Islands -->
+        <texture id="moonTex" filepath="scene/textures/moon.jpg" />
+        <texture id="redPlanetTex" filepath="scene/textures/redPlanet.jpg" />
+        <texture id="bluePlanetTex" filepath="scene/textures/bluePlanet.jpg" />
+        <texture id="asteroidTex" filepath="scene/textures/asteroid.jpg" />
+        <texture id="ufoTex" filepath="scene/textures/ufo.jpg" />
+
+        <!-- Parking Lot -->
+        <texture id="parkingTex" filepath="scene/textures/parking.jpg" />
+
+        <!-- Buttons -->
+        <texture id="changeNameButtonTex" filepath="scene/textures/buttons/changeNameButton.jpg" />
+        <texture id="minusButtonTex" filepath="scene/textures/buttons/minusButton.jpg" />
+        <texture id="plusButtonTex" filepath="scene/textures/buttons/plusButton.jpg" />
+        <texture id="userCarButtonTex" filepath="scene/textures/buttons/userCarButton.jpg" />
+        <texture id="botCarButtonTex" filepath="scene/textures/buttons/botCarButton.jpg" />
+        <texture id="playButtonTex" filepath="scene/textures/buttons/playButton.jpg" />
+        <texture id="restartButtonTex" filepath="scene/textures/buttons/restartButton.jpg" />
+
+    </textures> 
+
+    <materials>
+
+        <material id="roadMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="roadTex"
+            texlength_s="0.2" 
+            texlength_t="1"
+        />
+
+        <material id="powerupMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="powerupTex"
+            texlength_s="5" 
+            texlength_t="5"
+        />
+
+        <material id="obstacleMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="obstacleTex"
+            texlength_s="5" 
+            texlength_t="5"
+        />
+
+        <material id="fireworkMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="fireworkTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <!-- Cars -->
+        <material id="car1Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="car1Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="car2Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0.4 0.4 0.4 1" 
+            shininess="2" 
+            textureref="car2Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="car3Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0.4 0.4 0.4 1" 
+            shininess="2" 
+            textureref="car3Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="car4Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0.4 0.4 0.4 1" 
+            shininess="2" 
+            textureref="car4Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="car5Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0.4 0.4 0.4 1" 
+            shininess="2" 
+            textureref="car5Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="car6Mat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0.4 0.4 0.4 1" 
+            shininess="2" 
+            textureref="car6Tex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="personMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="personTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="shirtMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="shirtTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="exhaustMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="exhaustTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="wheelMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="wheelTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="carSeatMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="carSeatTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="wheelAxisMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="wheelAxisTex"
+            texlength_s="1" 
+            texlength_t="1"
+        />
+
+        <material id="steeringWheelMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="steeringWheelTex"
+            texlength_s="0.4" 
+            texlength_t="0.4"
+        />
+
+        <!-- Planets -->
+
+        <material id="moonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="moonTex"
+            texlength_s="75" 
+            texlength_t="75"
+        />
+
+        <material id="redPlanetMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="redPlanetTex"
+            texlength_s="100" 
+            texlength_t="100"
+        />
+
+        <material id="bluePlanetMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="bluePlanetTex"
+            texlength_s="100" 
+            texlength_t="100"
+        />
+
+        <material id="asteroidMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="asteroidTex"
+            texlength_s="10" 
+            texlength_t="10"
+        />
+
+        <material id="ufoMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="ufoTex"
+            texlength_s="10" 
+            texlength_t="10"
+        />
+
+        <!-- Parking lot -->
+
+        <material id="parkingMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="parkingTex"
+            texlength_s="2" 
+            texlength_t="2"
+        />
+
+        <!-- Buttons -->
+
+        <material id="changeNameButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="changeNameButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="minusButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="minusButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="plusButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="plusButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="userCarButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="userCarButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="botCarButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="botCarButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="playButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="playButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+        <material id="restartButtonMat" 
+            emissive="0.0 0.0 0.0 1" 
+			color="0.4 0.4 0.4 1.0" 
+            specular="0 0 0 0" 
+            shininess="0" 
+            textureref="restartButtonTex"
+            texlength_s="4" 
+            texlength_t="1.5"
+        />
+
+    </materials> 
+
+    <graph rootid="scene"> 
+
+		<node id="scene"> 
+            <children> 
+        
+                <directionallight id="sunLight" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="0.0"
+                    castshadow="true"
+                    shadowleft="1"
+                    position="-1 10 -1"
+                /> 
+
+                <!-- Menus -->
+                <noderef id="mainMenuIsland"/>
+                <noderef id="pauseMenuIsland"/>
+                <noderef id="endMenuIsland"/>
+
+                <!-- Paths -->
+                <noderef id="road"/>
+                <noderef id="easyRoute"/>
+                <noderef id="mediumRoute"/>
+                <noderef id="difficultRoute"/>
+                
+                <!-- Cars -->
+                <noderef id="car1"/>
+                <noderef id="car2"/>
+                <noderef id="car3"/>
+                <noderef id="car4"/>
+                <noderef id="car5"/>
+                <noderef id="car6"/>
+
+                <!-- Outdoors -->
+                <noderef id="hudOutdoorIsland"/>
+                <noderef id="bumpOutdoorIsland"/>
+
+                <!-- Main Island & Parking Lots -->
+                <noderef id="roadIsland"/>
+                <noderef id="parkingLot1"/>
+                <noderef id="parkingLot2"/>
+                <noderef id="parkingLot3"/>
+                
+                <!-- Obstacles -->
+                <noderef id="obstacle1"/>
+                <noderef id="obstacle2"/>
+                <noderef id="obstacle3"/>
+                <noderef id="obstacle4"/>
+                <noderef id="obstacle5"/>
+
+                <!-- Power-ups -->
+                <noderef id="powerup1" />
+                <noderef id="powerup2" />
+
+                <!-- Firework box -->
+                <noderef id="fireworkBox1" />
+                <noderef id="fireworkBox2" />
+                <noderef id="fireworkBox3" />
+
+            </children> 
+        </node>
+
+        <node id="road">
+
+            <materialref id="roadMat"/>
+
+            <transforms>
+                <scale value3="1 0.005 1" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <road segments="100" width="10" radius="3" closed="true">
+                        <controlpoint xx="-40" yy="0" zz="0" />
+                        <controlpoint xx="-30" yy="0" zz="40" />
+                        <controlpoint xx="0" yy="0" zz="40" />
+                        <controlpoint xx="40" yy="0" zz="40" />
+                        <controlpoint xx="20" yy="0" zz="0" />
+                        <controlpoint xx="40" yy="0" zz="-30" />
+                        <controlpoint xx="0" yy="0" zz="-40" />
+                        <controlpoint xx="-40" yy="0" zz="-40" />
+                        <controlpoint xx="-40" yy="0" zz="0" />
+                    </road>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="roadIsland">
+
+            <materialref id="moonMat"/>
+
+            <transforms>
+                <translate value3="0 -20.1 0"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                     <cylinder base="0" top="75" height="40" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+        </node>
+
+        <!-- Cars -->
+
+        <!-- FRONT WHEELS -->
+        <node id="wheel_front_left">
+
+            <materialref id="wheelMat"/>
+
+            <transforms>
+               
+                <translate value3="1.9 0.15 -0.6" />
+                 <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.3" top="0.3" height="0.15" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+
+        </node>
+
+        <node id="wheel_front_right">
+
+            <materialref id="wheelMat"/>
+
+            <transforms>
+               
+                <translate value3="0.1 0.15 -0.6" />
+                 <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.3" top="0.3" height="0.15" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+
+        </node>
+
+        <node id="front_wheel_axis">
+
+            <materialref id="wheelAxisMat"/>
+
+            <transforms>     
+                <translate value3="1 0.15 -0.6" />
+                <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.05" top="0.05" height="1.8" slices="32" stacks="32"/>
+                </primitive>
+            </children>
+
+        </node>
+        <!-- END FRONT WHEELS -->
+
+        <!-- BACK WHEELS -->
+         <node id="wheel_back_left">
+
+            <materialref id="wheelMat"/>
+
+            <transforms>
+               
+                <translate value3="1.9 0.15 -3.15" />
+                 <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.3" top="0.3" height="0.15" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+
+        </node>
+
+        <node id="wheel_back_right">
+
+            <materialref id="wheelMat"/>
+
+            <transforms>
+               
+                <translate value3="0.1 0.15 -3.15" />
+                 <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.3" top="0.3" height="0.15" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+
+        </node>
+
+        <node id="back_wheel_axis">
+
+            <materialref id="wheelAxisMat"/>
+
+            <transforms>     
+                <translate value3="1 0.15 --3.15" />
+                <rotate value3="0 0 1.57" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.05" top="0.05" height="1.8" slices="32" stacks="32"/>
+                </primitive>
+            </children>
+
+        </node>
+        <!-- END BACK WHEELS-->
+
+        <!-- STEERING WHEEL BASE -->
+
+        <node id="steering_wheel_base_part1">
+
+            <transforms>     
+                <translate value3="0.25 0.2 0.1" />
+                <rotate value3="-1.1775 0 0" />
+            </transforms>
+
+            <children>
+                <noderef id="steering_wheel_base_part2" />
+                <primitive>
+                    <rectangle xy1="0 0" xy2="1.5 1" />
+                </primitive>
+                <primitive>
+                    <triangle 
+                        xyz1="1.5 1 -0.517"
+                        xyz2="1.5 1 0" 
+                        xyz3="1.5 0 0" />
+                </primitive>
+                 <primitive>
+                    <triangle 
+                        xyz1="0 1 0" 
+                        xyz2="0 1 -0.517"
+                        xyz3="0 0 0" />
+                </primitive>
+            </children>
+
+        </node>
+
+        <node id="steering_wheel_base_part2_help1">
+            <materialref id="wheelAxisMat"/>
+
+            <transforms>     
+                <translate value3="0.75 0.4 0.05" />
+                <rotate value3="1.57 0 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.02" top="0.02" height="0.1" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="steering_wheel_base_part2_help2">
+            <materialref id="steeringWheelMat"/>
+
+            <transforms>     
+                <translate value3="0.75 0.4 0.1" />
+                <rotate value3="1.57 0 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <cylinder base="0.2" top="0.2" height="0.05" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="steering_wheel_base_part2">
+
+            <transforms>  
+                <translate value3="1.5 1 -0.5175" />
+                <rotate value3="1.57 3.14 0" />       
+            </transforms>
+
+            <children>
+
+                <noderef id="steering_wheel_base_part2_help1" />
+                <noderef id="steering_wheel_base_part2_help2" />
+
+               <primitive>
+                    <rectangle xy1="0 0" xy2="1.5 0.517" />
+                </primitive>
+
+
+            </children>
+
+        </node>
+
+        <node id="steering_wheel_base">
+
+            <transforms>     
+            </transforms>
+
+            <children>
+            
+                <noderef id="steering_wheel_base_part1" />
+                
+            </children>
+
+        </node>
+
+        <!-- END STEERING WHEEL BASE -->
+
+        <!-- SEATS -->
+
+        <node id= "seat">
+
+            <materialref id="carSeatMat"/>
+
+            <children>
+                <primitive>
+                    <box xyz1="0.5 0.1 -1.5" xyz2="1.5 0.25 -2.25" />
+                </primitive>
+                <noderef id="seat_back" />
+                <noderef id="person" />
+            </children>
+        </node>
+
+        <node id="seat_back">
+
+            <transforms>
+                <translate value3="0 0.2 0" />
+                <rotate value3="-0.1 0.0 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <box xyz1="0.5 0.1 -2.2" xyz2="1.5 1 -2.3" />
+                </primitive>
+            </children>
+        </node>
+
+        <!-- END SEATS-->
+
+        <!-- PERSON LIKE -->
+
+        <node id="person_body">
+            <materialref id="shirtMat"/>
+
+            <transforms>
+                <scale value3="1 1.3 1" />
+            </transforms>
+    
+            <children>
+                <primitive>
+                    <sphere radius="0.4" slices="10" stacks="10" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="person_head">
+            <materialref id="personMat"/>
+
+            <transforms>
+                <translate value3="0 0.7 0"/>
+            </transforms>
+    
+            <children>
+                <primitive>
+                    <sphere radius="0.3" slices="10" stacks="10" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="person">
+
+            <transforms>
+                <translate value3="1 0.5 -1.7"/>
+            </transforms>
+    
+            <children>
+                <noderef id="person_body"/>
+                <noderef id="person_head"/>
+            </children>
+        </node>
+
+        <!-- END PERSON LIKE -->
+
+        <!-- GAS EXHAUST -->
+        <node id="gas_exhaust1">
+
+            <materialref id="exhaustMat"/>
+
+            <transforms>
+                <translate value3="0.6 0.5 -4" />
+                <rotate value3="1.77 0 0" />
+            </transforms>
+    
+            <children>
+                  <primitive>
+                    <cylinder base="0.15" top="0.1" height="0.5" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+
+            </children>
+        </node>
+
+        <node id="gas_exhaust2">
+
+            <materialref id="exhaustMat"/>
+
+            <transforms>
+                <translate value3="1.4 0.5 -4" />
+                <rotate value3="1.77 0 0" />
+            </transforms>
+    
+            <children>
+                  <primitive>
+                    <cylinder base="0.15" top="0.1" height="0.5" slices="32" stacks="32" capsclose="true"/>
+                </primitive>
+
+            </children>
+        </node>
+        <!-- END GAS EXHAUST-->
+
+        <node id="car_model">
+
+            <transforms>
+                <translate value3="-0.25 0.1 0.75" />
+                <scale value3="0.25 0.25 0.25" />
+            </transforms>
+    
+            <children>
+
+                <!-- FRONT WHEELS -->
+                <noderef id="wheel_front_left" />
+                <noderef id="wheel_front_right" />
+                <noderef id="front_wheel_axis" />
+                <!-- BACK WHEEL -->
+                <noderef id="wheel_back_left" />
+                <noderef id="wheel_back_right" />
+                <noderef id="back_wheel_axis" />
+
+                <noderef id="steering_wheel_base" />
+
+
+                <!-- FRONT BUMPER -->
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="2 0.2 0.2" />
+                </primitive>
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="0.2 0.2 -0.2" />
+                </primitive>
+                <primitive>
+                    <box xyz1="1.8 0 0" xyz2="2.0 0.2 -0.2" />
+                </primitive>
+                <!-- END FRONT BUMPER-->
+
+                <!-- MIDDLE FLOOR-->
+                <primitive>
+                    <box xyz1="0 0 -1" xyz2="2 0.1 -2.75" />
+                </primitive>
+                <primitive>
+                    <box xyz1="0 0.1 -1.25" xyz2="0.2 0.4 -2.5" />
+                </primitive>
+                <primitive>
+                    <box xyz1="1.8 0.1 -1.25" xyz2="2 0.4 -2.5" />
+                </primitive>
+                <noderef id="seat" />
+                <!-- END MIDDLE -->
+
+                <!-- BACK BUMPER -->
+                <primitive>
+                    <box xyz1="0 0 -3.75" xyz2="2 0.2 -3.95" />
+                </primitive>
+                <primitive>
+                    <box xyz1="0 0 -3.55" xyz2="0.2 0.2 -3.75" />
+                </primitive>
+                <primitive>
+                    <box xyz1="1.8 0 -3.55" xyz2="2.0 0.2 -3.75" />
+                </primitive>
+                <!-- END BACK BUMPER -->
+
+                <!-- BACK PART -->
+                <primitive>
+                    <box xyz1="0.25 0.1 -2.65" xyz2="1.75 0.75 -3.85" />
+                </primitive>
+                <noderef id="gas_exhaust1" />
+                <noderef id="gas_exhaust2" />
+                <!-- END BACK PART -->
+
+            </children>
+
+        </node>
+
+        <!-- CARS ONE SCENE -->
+
+        <node id="car1">
+
+            <materialref id="car1Mat"/>
+
+            <transforms>
+                <translate value3="-80.3 5.25 -2" />
+                <rotate value3="0 1.57 0" />
+            </transforms>
+
+            <children>
+                <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <node id="car2">
+
+            <materialref id="car2Mat"/>
+
+            <transforms>
+                <translate value3="-80.3 5.25 0" />
+                <rotate value3="0 1.57 0" />
+            </transforms>
+
+            <children>
+                 <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <node id="car3">
+
+            <materialref id="car3Mat"/>
+
+            <transforms>
+                 <translate value3="-80.3 5.25 2" />
+                <rotate value3="0 1.57 0" />
+            </transforms>
+
+            <children>
+                 <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <node id="car4">
+
+            <materialref id="car4Mat"/>
+
+            <transforms>
+                 <translate value3="8 10.25 59.5" />
+            </transforms>
+
+            <children>
+                 <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <node id="car5">
+
+            <materialref id="car5Mat"/>
+
+            <transforms>
+                 <translate value3="10 10.25 59.5" />
+            </transforms>
+
+            <children>
+                 <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <node id="car6">
+
+            <materialref id="car6Mat"/>
+
+            <transforms>
+                 <translate value3="12 10.25 59.5" />
+            </transforms>
+
+            <children>
+                 <noderef id="car_model" />
+            </children>
+
+        </node>
+
+        <!-- Autonomous routes -->
+
+        <node id="easyRoute">
+
+            <animation>
+                <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                <controlpoint xx="-30" yy="0" zz="40" time="10" />
+                <controlpoint xx="-5" yy="0" zz="40" time="20" />
+                <controlpoint xx="40" yy="0" zz="40" time="30" />
+                <controlpoint xx="25" yy="0" zz="0" time="40"/>
+                <controlpoint xx="40" yy="0" zz="-35" time="50" />
+                <controlpoint xx="0" yy="0" zz="-40" time="60" />
+                <controlpoint xx="-45" yy="0" zz="-40" time="70" />
+                <controlpoint xx="-40" yy="0" zz="0" time="80" />
+            </animation>
+
+            <children>
+                <primitive>
+                    <route>
+                        <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                        <controlpoint xx="-30" yy="0" zz="40" time="2" />
+                        <controlpoint xx="-5" yy="0" zz="40" time="4" />
+                        <controlpoint xx="40" yy="0" zz="40" time="6" />
+                        <controlpoint xx="25" yy="0" zz="0" time="8"/>
+                        <controlpoint xx="40" yy="0" zz="-35" time="10" />
+                        <controlpoint xx="0" yy="0" zz="-40" time="12" />
+                        <controlpoint xx="-45" yy="0" zz="-40" time="14" />
+                        <controlpoint xx="-40" yy="0" zz="0" time="16" />
+                    </route>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="mediumRoute">
+
+            <animation>
+                <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                <controlpoint xx="-30" yy="0" zz="40" time="5" />
+                <controlpoint xx="-5" yy="0" zz="40" time="10" />
+                <controlpoint xx="40" yy="0" zz="40" time="15" />
+                <controlpoint xx="25" yy="0" zz="0" time="20"/>
+                <controlpoint xx="40" yy="0" zz="-35" time="25" />
+                <controlpoint xx="0" yy="0" zz="-40" time="30" />
+                <controlpoint xx="-45" yy="0" zz="-40" time="35" />
+                <controlpoint xx="-40" yy="0" zz="0" time="40" />
+            </animation>
+
+            <children>
+                <primitive>
+                    <route>
+                        <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                        <controlpoint xx="-30" yy="0" zz="40" time="5" />
+                        <controlpoint xx="-5" yy="0" zz="40" time="10" />
+                        <controlpoint xx="40" yy="0" zz="40" time="15" />
+                        <controlpoint xx="25" yy="0" zz="0" time="20"/>
+                        <controlpoint xx="40" yy="0" zz="-35" time="25" />
+                        <controlpoint xx="0" yy="0" zz="-40" time="30" />
+                        <controlpoint xx="-45" yy="0" zz="-40" time="35" />
+                        <controlpoint xx="-40" yy="0" zz="0" time="40" />
+                    </route>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="difficultRoute">
+
+            <animation>
+                <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                <controlpoint xx="-30" yy="0" zz="40" time="1" />
+                <controlpoint xx="-5" yy="0" zz="40" time="2" />
+                <controlpoint xx="40" yy="0" zz="40" time="3" />
+                <controlpoint xx="25" yy="0" zz="0" time="4"/>
+                <controlpoint xx="40" yy="0" zz="-35" time="5" />
+                <controlpoint xx="0" yy="0" zz="-40" time="6" />
+                <controlpoint xx="-45" yy="0" zz="-40" time="7" />
+                <controlpoint xx="-40" yy="0" zz="0" time="8" />
+            </animation>
+
+            <children>
+                <primitive>
+                    <route>
+                        <controlpoint xx="-40" yy="0" zz="0" time="0" />
+                        <controlpoint xx="-30" yy="0" zz="40" time="2" />
+                        <controlpoint xx="-5" yy="0" zz="40" time="4" />
+                        <controlpoint xx="40" yy="0" zz="40" time="6" />
+                        <controlpoint xx="25" yy="0" zz="0" time="8"/>
+                        <controlpoint xx="40" yy="0" zz="-35" time="10" />
+                        <controlpoint xx="0" yy="0" zz="-40" time="12" />
+                        <controlpoint xx="-45" yy="0" zz="-40" time="14" />
+                        <controlpoint xx="-40" yy="0" zz="0" time="16" />
+                    </route>
+                </primitive>
+            </children>
+        </node>
+
+        <!-- Obstacles -->
+
+        <node id="obstacleModel">
+             <materialref id="obstacleMat" />
+              <children>
+                <primitive>
+                   <sphere radius="1.5" slices="30" stacks="30" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="obstacle1">
+            <transforms>
+                <translate value3="0 2.5 -40" />
+            </transforms>
+
+            <animation>
+                <controlpoint xx="0" yy="2.5" zz="-45" time="0" /> 
+                <controlpoint xx="0" yy="2.5" zz="-35" time="0.5" />
+                <controlpoint xx="0" yy="10" zz="-45" time="1" />
+                <controlpoint xx="0" yy="10" zz="-35" time="1.5" />
+                <controlpoint xx="0" yy="2.5" zz="-45" time="2" /> 
+            </animation>
+
+            <children>
+                <noderef id="obstacleModel" />
+            </children>
+        </node>
+
+        <node id="obstacle2">
+            <transforms>
+                <translate value3="0 2.5 40" />
+            </transforms>
+
+            <animation>
+                <controlpoint xx="0" yy="2.5" zz="45" time="0" /> 
+                <controlpoint xx="0" yy="2.5" zz="35" time="1" />
+                <controlpoint xx="0" yy="10" zz="45" time="2" />
+                <controlpoint xx="0" yy="10" zz="35" time="3" />
+                <controlpoint xx="0" yy="2.5" zz="45" time="4" /> 
+            </animation>
+
+            <children>
+                <noderef id="obstacleModel" />
+            </children>
+        </node>
+
+        <node id="obstacle3">
+
+            <materialref id="obstacleMat"/>
+
+            <transforms>
+                <translate value3="-72 25.5 98" />
+            </transforms>
+
+            <children>
+                <noderef id="obstacleModel" />
+            </children>
+        </node>
+
+        <node id="obstacle4">
+
+            <materialref id="obstacleMat"/>
+
+            <transforms>
+                <translate value3="-70 25.5 100" />
+            </transforms>
+
+            <children>
+                <noderef id="obstacleModel" />
+            </children>
+        </node>
+
+        <node id="obstacle5">
+
+            <materialref id="obstacleMat"/>
+
+            <transforms>
+                <translate value3="-68 25.5 102" />
+            </transforms>
+
+            <children>
+                <noderef id="obstacleModel" />
+            </children>
+        </node>
+
+
+        <!-- Power-ups -->
+
+        <node id="powerupModel">
+             <materialref id="powerupMat" />
+              <children>
+                <primitive>
+                   <sphere radius="1.5" slices="30" stacks="30" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="powerup1">
+            <transforms>
+                <translate value3="18 3 0" />
+            </transforms>
+
+            <animation>
+                <controlpoint xx="20" yy="3" zz="0" time="0" /> 
+                <controlpoint xx="20" yy="10" zz="0" time="5" />
+                <controlpoint xx="20" yy="3" zz="0" time="6" />
+            </animation>
+
+            <children>
+                <noderef id="powerupModel" />
+            </children>
+        </node>
+
+        <node id="powerup2">
+            <transforms>
+                <translate value3="-40 3 20" />
+            </transforms>
+
+            <animation>
+                <controlpoint xx="-37" yy="3" zz="20" time="0" /> 
+                <controlpoint xx="-37" yy="3" zz="20" time="1" />
+                <controlpoint xx="-37" yy="10" zz="20" time="2" />
+                <controlpoint xx="-37" yy="10" zz="20" time="3" />
+                <controlpoint xx="-37" yy="3" zz="20" time="4" /> 
+            </animation>
+
+            <children>
+                <noderef id="powerupModel" />
+            </children>
+        </node>
+
+        <!-- Fireworks -->
+
+        <node id="fireworkModel">
+            <materialref id="fireworkMat" />
+            <children>
+                <primitive>
+                    <box xyz1="-1 0 -1" xyz2="1 1 1" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="fireworkBox1">
+            <transforms>
+                <translate value3="-47 0 2" />
+            </transforms>
+            <children>
+                <noderef id="fireworkModel" />
+            </children>
+        </node>
+
+        <node id="fireworkBox2">
+            <transforms>
+                <translate value3="-34 0 -1" />
+            </transforms>
+            <children>
+                <noderef id="fireworkModel" />
+            </children>
+        </node>
+
+        <node id="fireworkBox3">
+            <transforms>
+                <translate value3="-79 47 -88" />
+                <rotate value3="0 0.5 0"/>
+            </transforms>
+            <children>
+                <noderef id="fireworkModel" />
+            </children>
+        </node>
+        
+        <!-- Outdoors' frames -->
+
+        <node id="outdoorFrameBox">
+
+            <children>
+                <primitive>
+                    <box xyz1="-0.4 0.5 -0.03" xyz2="0.4 0.6 0.03" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-0.4 -0.5 -0.03" xyz2="0.4 -0.6 0.03" />
+                </primitive>
+                <primitive>
+                    <box xyz1="-0.5 0.6 -0.03" xyz2="-0.4 -0.6 0.03" />
+                </primitive>
+                <primitive>
+                    <box xyz1="0.5 0.6 -0.03" xyz2="0.4 -0.6 0.03" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="outdoorBackPanel">
+
+            <materialref id="wheelMat"/>
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-0.5 -0.6" xy2="0.5 0.6" parts_x="100" parts_y="100"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="outdoorBackPanel2">
+
+            <materialref id="car2Mat"/>
+
+            <children>
+                <primitive>
+                    <rectangle xy1="-0.4 -0.52" xy2="0.4 0.52" parts_x="100" parts_y="100"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="outdoorBase">
+            <children>
+                <primitive>
+                    <box xyz1="-0.025 -0.6 -0.02" xyz2="0.025 -1.5 0.02" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="outdoorBillBoard">
+
+            <transforms>
+                <scale value3="55 14 10"/>
+            </transforms>
+
+            <materialref id="ufoMat"/>
+
+            <children>
+                <noderef id="outdoorFrameBox"/>
+                <noderef id="outdoorBackPanel"/>
+                <noderef id="outdoorBase"/>
+            </children>
+        </node>
+
+        <node id="outdoorBillBoard2">
+
+            <transforms>
+                <scale value3="55 14 10"/>
+            </transforms>
+
+            <materialref id="car1Mat"/>
+
+            <children>
+                <noderef id="outdoorFrameBox"/>
+                <noderef id="outdoorBackPanel2"/>
+                <noderef id="outdoorBase"/>
+            </children>
+        </node>
+
+        <node id="adsIsland">
+
+            <materialref id="redPlanetMat"/>
+
+            <transforms>
+                <translate value3="0 -32 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <sphere radius="20" slices="20" stacks="20" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="outdoorIsland">
+
+            <children>
+                <noderef id="outdoorBillBoard"/>
+                <noderef id="adsIsland"/>
+            </children>
+        </node>
+
+        <node id="outdoorIsland2">
+
+            <children>
+                <noderef id="outdoorBillBoard2"/>
+                <noderef id="adsIsland"/>
+            </children>
+        </node>
+
+        <node id="hudOutdoorIsland">
+
+            <transforms>
+                <translate value3="0 25 -120"/>
+            </transforms>
+
+            <children>
+               <noderef id="outdoorIsland"/>
+            </children>
+        </node>
+
+        <node id="bumpOutdoorIsland">
+
+            <transforms>
+                <translate value3="140 50 30"/>
+                <rotate value3="0 -1.57 0"/>
+            </transforms>
+
+            <children>
+               <noderef id="outdoorIsland2"/>
+            </children>
+        </node>
+
+        <!-- PARKING LOTS -->
+
+
+        <node id="parkingSpaces">
+
+            <materialref id="parkingMat"/>
+
+            <children>
+                <primitive>
+                    <box xyz1="-5 -0.3 -1" xyz2="5 0.3 1" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="parking1Island">
+
+            <materialref id="ufoMat"/>
+
+            <transforms>
+                <translate value3="0 -0.5 0"/>
+            </transforms>
+
+            <children>
+                <primitive>          
+                    <cylinder base="7" top="7" height="1.5" slices="8" stacks="32" capsclose="true" />
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="parkingLot1">
+
+            <transforms>
+                <translate value3="-80 5 0" />
+                <rotate value3="0 -1.57 0"/>
+            </transforms>
+
+            <children>
+                <noderef id="parkingSpaces"/>
+                <noderef id="parking1Island"/>
+            </children>
+        </node>
+
+        <node id="parking2Island">
+
+            <materialref id="asteroidMat"/>
+
+            <transforms>
+                <translate value3="0 -2 0"/>
+            </transforms>
+
+            <children>
+                <primitive>          
+                    <cylinder base="0" top="7" height="3.4" slices="8" stacks="32" capsclose="true" />
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="parkingLot2">
+
+            <transforms>
+                <translate value3="10 10 60" />
+            </transforms>
+
+            <children>
+                <noderef id="parkingSpaces"/>
+                <noderef id="parking2Island"/>
+            </children>
+        </node>
+
+
+        <node id="parking3Island">
+
+            <materialref id="bluePlanetMat"/>
+
+            <transforms>
+                <translate value3="0 -7 0" />
+            </transforms>
+
+            <children>
+                <primitive>
+                    <sphere radius="7" slices="20" stacks="20" />
+                </primitive>
+            </children>
+        </node>
+
+
+        <node id="parking3Support1">
+
+            <materialref id="car1Mat"/>
+
+            <transforms>
+                <translate value3="4 -0.7 0" />
+                <rotate value3="0 0 0.785"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <box xyz1="-1 -0.3 -0.5" xyz2="1 0.3 0.5" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="parking3Support2">
+
+            <materialref id="car1Mat"/>
+
+            <transforms>
+                <translate value3="-4 -0.7 0" />
+                <rotate value3="0 0 -0.785"/>
+            </transforms>
+
+            <children>
+                <primitive>
+                    <box xyz1="-1 -0.3 -0.5" xyz2="1 0.3 0.5" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="parkingLot3">
+
+            <transforms>
+                <translate value3="-70 25 100" />
+                <rotate value3="0 -0.785 0"/>
+            </transforms>
+
+            <children>
+                <noderef id="parkingSpaces"/>
+                <noderef id="parking3Island"/>
+
+                <noderef id="parking3Support1"/>
+                <noderef id="parking3Support2"/>
+            </children>
+        </node>
+
+    <!-- MENUS -->
+
+        <!-- MAIN MENU -->
+
+    <node id="mainMenuIsland">
+
+        <transforms>
+            <translate value3="50 30 120"/>
+            <rotate value3="0 3.14 0"/>
+        </transforms>
+
+        <children>
+            <noderef id="outdoorIsland"/>
+            <noderef id="mainMenuBoard"/>
+        </children>
+    </node>
+
+    <node id="nameButton">
+        <materialref id="changeNameButtonMat"/>
+
+        <transforms>
+            <translate value3="16 4 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="minusDifficultyButton">
+        <materialref id="minusButtonMat"/>
+
+        <transforms>
+            <translate value3="0 2 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="plusDifficultyButton">
+        <materialref id="plusButtonMat"/>
+
+        <transforms>
+            <translate value3="6 2 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="minusLapButton">
+        <materialref id="minusButtonMat"/>
+
+        <transforms>
+            <translate value3="0 0 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="plusLapButton">
+        <materialref id="plusButtonMat"/>
+
+        <transforms>
+            <translate value3="6 0 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="userCarButton">
+        <materialref id="userCarButtonMat"/>
+
+        <transforms>
+            <translate value3="-4 -2 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="botCarButton">
+        <materialref id="botCarButtonMat"/>
+
+        <transforms>
+            <translate value3="4 -2 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="startButton">
+        <materialref id="playButtonMat"/>
+
+        <transforms>
+            <translate value3="0 -4.5 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="mainMenuBoard">
+
+        <materialref id="car2Mat"/>
+
+        <transforms>
+            <translate value3="0 0 0"/>
+        </transforms>
+
+        <children>
+            <noderef id="nameButton" />
+            <noderef id="minusDifficultyButton"/>
+            <noderef id="plusDifficultyButton"/>
+            <noderef id="minusLapButton"/>
+            <noderef id="plusLapButton"/>
+            <noderef id="userCarButton" />
+            <noderef id="botCarButton" />
+            <noderef id="startButton" />
+        </children>
+    </node>
+
+         <!-- END MENU -->
+
+     <node id="endMenuIsland">
+
+        <transforms>
+            <translate value3="-80 60 -90"/>
+            <rotate value3="0 0.5 0"/>
+        </transforms>
+
+        <children>
+            <noderef id="outdoorIsland"/>
+            <noderef id="endMenuBoard"/>
+        </children>
+    </node>
+
+     <node id="raceAgainButton">
+        <materialref id="playButtonMat"/>
+
+        <transforms>
+            <translate value3="15 1 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="goToStartButton">
+        <materialref id="restartButtonMat"/>
+
+        <transforms>
+            <translate value3="15 -2 0"/>
+        </transforms>
+
+        <children>
+            <primitive>
+                <box xyz1="-2 -0.7 -0.5" xyz2="2 0.7 0.5" />
+            </primitive>
+        </children>
+    </node>
+
+    <node id="endMenuBoard">
+
+        <materialref id="car2Mat"/>
+
+        <transforms>
+            <translate value3="0 0 0"/>
+        </transforms>
+
+        <children>
+            <noderef id="raceAgainButton" />
+            <noderef id="goToStartButton" />
+        </children>
+    </node>
+
+    </graph> 
+
+</yaf> 

@@ -19,9 +19,9 @@ This repository contains all projects of the UC Sistemas Gráficos e Interfaces,
 
 ![Project 2](./Project%202/images/mainExample.png)
 
-## Project 3 -  S (Grade: __/20)
+## Project 3 -  Speeding Galactic Infernal (Grade: __/20)
 
-![Project 3](./Project%203/images/??.jpg)
+![Project 3](./Project%203/screenshots/image5.png)
 
 #### Members
 

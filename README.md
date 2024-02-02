@@ -2,7 +2,7 @@
 
 This repository contains all projects of the UC Sistemas Gráficos e Interfaces, taught by [Augusto Sousa](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=209500) and [Nelson Rodrigues](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=689762) at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br> <br>
 
-<h2 align = "center" >Final Grade: __/20</h2>
+<h2 align = "center" >Final Grade: 20/20</h2>
 <p align = "center" >
   <img 
        title = "FEUP logo"
@@ -19,7 +19,7 @@ This repository contains all projects of the UC Sistemas Gráficos e Interfaces,
 
 ![Project 2](./Project%202/images/mainExample.png)
 
-## Project 3 -  Speeding Galactic Infernal (Grade: __/20)
+## Project 3 -  Speeding Galactic Infernal (Grade: 19.5/20)
 
 ![Project 3](./Project%203/screenshots/image5.png)
 
